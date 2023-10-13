@@ -1,0 +1,50 @@
+@page
+@model RazorPagesLego.Pages.Legos.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Lego</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Lego.Id" />
+            <div class="form-group">
+                <label asp-for="Lego.Title" class="control-label"></label>
+                <input asp-for="Lego.Title" class="form-control" />
+                <span asp-validation-for="Lego.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lego.ReleaseDate" class="control-label"></label>
+                <input asp-for="Lego.ReleaseDate" class="form-control" />
+                <span asp-validation-for="Lego.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lego.PieceCount" class="control-label"></label>
+                <input asp-for="Lego.PieceCount" class="form-control" />
+                <span asp-validation-for="Lego.PieceCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lego.ReleasePrice" class="control-label"></label>
+                <input asp-for="Lego.ReleasePrice" class="form-control" />
+                <span asp-validation-for="Lego.ReleasePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
