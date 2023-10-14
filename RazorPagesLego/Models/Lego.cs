@@ -20,7 +20,6 @@ public class Lego
     public int PieceCount { get; set; }
 
     [Display(Name = "Release Price")]
-    [Range(1, 100)]
     [DataType(DataType.Currency)]
     [Column(TypeName = "decimal(18, 2)")]
     public decimal ReleasePrice { get; set; }
